@@ -1,0 +1,23 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: Receipe_App_development
+  pool: 5
+  username: postgres
+  password: koko23052020
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: Receipe_App_test
+  pool: 5
+  username: postgres
+  password: koko23052020
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: Receipe_App_production
+  pool: 5
+  username: postgres
+  password: koko23052020
