@@ -1,0 +1,29 @@
+<section class='food-form-container'>
+<h1>Add a new Food</h1>
+
+<%= form_with model: @food, url: foods_path, method: :post, scope: :food, locals: { food: @food } do |form| %>
+
+<div class='form-item'>
+      <%= form.label :name, class: 'form-label' %>
+      <%= form.text_field :name, class:"input-form" %>
+</div>
+
+<div class='form-item'>
+      <%= form.label :measurement_unit, class: 'form-label' %>
+      <%= form.text_field :measurement_unit, class:"input-form" %>
+</div>
+
+<div class='form-item'>
+      <%= form.label :price, class: 'form-label' %>
+      <%= form.text_field :price, class:"input-form" %>
+</div>
+
+<div class='form-item'>
+      <%= form.label :quantity, class: 'form-label' %>
+      <%= form.text_field :quantity, class:"input-form" %>
+</div>
+
+<%= form.submit "Add food" , class:"form-button" %>
+  <% end %>
+
+</section>
