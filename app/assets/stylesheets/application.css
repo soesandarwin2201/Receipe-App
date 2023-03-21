@@ -156,6 +156,7 @@ nav {
  margin-inline: 5rem;
  margin-top: 2rem;
  text-align: center;
+ box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
 .food-table {
