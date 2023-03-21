@@ -152,44 +152,44 @@ nav {
 }
 
 .foods-container {
- width: 80vw;
- margin-inline: 5rem;
- margin-top: 2rem;
- text-align: center;
- box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  width: 80vw;
+  margin-inline: 5rem;
+  margin-top: 2rem;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
 .food-table {
- background-color: #79d2a0;
- margin-top: 1rem;
- width: 100%;
- padding: 1rem;
- border: 1px solid #fff;
+  background-color: #79d2a0;
+  margin-top: 1rem;
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #fff;
 }
 
 thead {
- background-color: #79d2a0;
+  background-color: #79d2a0;
 }
 
 .col {
- padding: 1rem 0;
- margin: .5rem;
- border-bottom: 1px solid #fff;
+  padding: 1rem 0;
+  margin: 0.5rem;
+  border-bottom: 1px solid #fff;
 }
 
 td {
- margin: 2rem 0;
- border-bottom: 1px solid #fff;
- padding-top: 1rem;
+  margin: 2rem 0;
+  border-bottom: 1px solid #fff;
+  padding-top: 1rem;
 }
 
 .btn {
- margin-top: 3rem;
- padding: 1rem 2rem;
- color: #fff;
- background-color: #4caf50;
- border-radius: 15px;
- outline: 0;
- border: 0;
- box-shadow: 0 0 10px #888;
+  margin-top: 3rem;
+  padding: 1rem 2rem;
+  color: #fff;
+  background-color: #4caf50;
+  border-radius: 15px;
+  outline: 0;
+  border: 0;
+  box-shadow: 0 0 10px #888;
 }
