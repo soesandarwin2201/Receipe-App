@@ -17,12 +17,16 @@
   <tr>
   <td><%= food.name %></td>
   <td><%= food.quantity %></td>
-  <td><%= food.measurement_unit %></td>
-  <td><%= food.price %></td>
+  <td><%= food.measurement_unit %> garams</td>
+  <td>$<%= food.price %></td>
+  <td>delete</td>
   </tr>
   <% end %>
   <tbody>
 </table>
 <% end %>
+<button class='btn'>
 <%= link_to 'Post form', new_food_path %>
+</button>
+
 </section>
