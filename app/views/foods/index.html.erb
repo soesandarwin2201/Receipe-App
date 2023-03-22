@@ -19,7 +19,11 @@
   <td><%= food.quantity %></td>
   <td><%= food.measurement_unit %> garams</td>
   <td>$<%= food.price %></td>
-  <td>delete</td>
+  <td><% if can? :destroy, food %>
+  <%= button_to "Delete", food_path(food), method: :delete, class: "btn" %>
+<% end %>
+
+  </td>
   </tr>
   <% end %>
   <tbody>

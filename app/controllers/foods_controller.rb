@@ -26,7 +26,7 @@ class FoodsController < ApplicationController
     end
   end
 
-  def destory 
+  def destroy 
     @food = Food.find(params[:id])
     if @food.destroy
       flash[:success] = 'food deleted successfully'
