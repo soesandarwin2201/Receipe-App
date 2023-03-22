@@ -1,8 +1,8 @@
 class RecipesController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: %i[index show]
   def index
     @recipes = Recipe.all
-  end  
+  end
 
   def new
     @user = current_user
@@ -38,9 +38,7 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
-    if !@recipe.public && current_user != @recipe.user
-      redirect_to recipes_path, alert: 'Recipe not found.'
-    end
+    redirect_to recipes_path, alert: 'Recipe not found.' if !@recipe.public && current_user != @recipe.user
     @food = Food.all
   end
 end

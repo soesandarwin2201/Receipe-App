@@ -18,7 +18,9 @@
   <p class= "recipe-name">steps go here </p>
   </div>
 </div>
-  <%= button_to 'Add Ingredients', recipes_path(@recipe), method: :get %>
-  <%= button_to 'See all recipe', recipes_path(@recipe), method: :get %>
+  <div class="recipe-btn">
+  <%= button_to 'Generate Shopping List', recipes_path(@recipe), method: :get %>
+  <%= button_to 'Add Ingredients', foods_path(@food), method: :get %>
+  </div>
 
 </section>
