@@ -32,6 +32,6 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     @recipe.destroy
     flash[:notice] = 'Post successfully deleted'
-    redirect_to user_posts_path(params[:recipe_id])
+    redirect_to recipe_path(params[:recipe_id])
   end
 end
