@@ -1,0 +1,14 @@
+<section>
+<h1>List of recipes</h1>
+<ul class="recipe-section">
+  <% @recipe.each do |recipe| %>
+    <li>
+      <h2><%=recipe.name %></h2>
+      <p><%= recipe.preparation_time %></p>
+      <p><%= recipe.cooking_time %></p>
+      <%= button_to "Delete" %>
+      <p><%= recipe.description %></p>
+    </li>
+  <% end %>
+</ul>
+</section>

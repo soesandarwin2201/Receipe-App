@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   resources :foods, only: [:index, :new, :create]
 
   # Defines the root path route ("/")
+  # get "food#index"
+  resources :recipes, only: [:index, :new, :create]
 end
