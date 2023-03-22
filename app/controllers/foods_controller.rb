@@ -1,4 +1,5 @@
 class FoodsController < ApplicationController
+  load_and_authorize_resource
   def index
     @food = Food.all
   end
@@ -22,6 +23,16 @@ class FoodsController < ApplicationController
           render :new, locals: { food: @food }
         end
       end
+    end
+  end
+
+  def destroy
+    @food = Food.find(params[:id])
+    if @food.destroy
+      flash[:success] = 'food deleted successfully'
+      redirect_to foods_path
+    else
+      flash.now[:error] = 'Error: Food could not be delete'
     end
   end
 

@@ -6,9 +6,12 @@
       <h2><%=recipe.name %></h2>
       <p><%= recipe.preparation_time %></p>
       <p><%= recipe.cooking_time %></p>
-      <%= button_to "Delete" %>
+      <% if can? :destroy, recipe %>
+        <%= button_to "Delete Recipe",  recipe_path(recipe), method: :delete, class: 'btn' %>
+      <% end %>
       <p><%= recipe.description %></p>
     </li>
   <% end %>
 </ul>
+<%= link_to 'Add new form', new_recipe_path %>
 </section>
