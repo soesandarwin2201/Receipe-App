@@ -1,7 +1,8 @@
 class RecipesController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
   def index
-    @recipe = Recipe.all
-  end
+    @recipes = Recipe.all
+  end  
 
   def new
     @user = current_user
@@ -33,5 +34,13 @@ class RecipesController < ApplicationController
     @recipe.destroy
     flash[:notice] = 'Post successfully deleted'
     redirect_to recipes_path
+  end
+
+  def show
+    @recipe = Recipe.find(params[:id])
+    if !@recipe.public && current_user != @recipe.user
+      redirect_to recipes_path, alert: 'Recipe not found.'
+    end
+    @food = Food.all
   end
 end

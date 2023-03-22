@@ -1,0 +1,24 @@
+<section>
+
+<h1>Details of a Recipe</h1>
+
+<%recipe = @recipe%>
+
+<div class="recipe-container">
+  <div class="name-box">
+  <p class= "recipe-name"><%= link_to "#{recipe.preparation_time}", "#{recipes_path}/#{recipe.id}" %></p>
+  </div>
+  <div class="name-box">
+  <p class= "recipe-name"><%= link_to "#{recipe.cooking_time}", "#{recipes_path}/#{recipe.id}" %></p>
+  </div>
+  <div class="name-box">
+  <p class= "recipe-name"><%= link_to "#{recipe.description}", "#{recipes_path}/#{recipe.id}" %></p>
+  </div>
+  <div class="name-box">
+  <p class= "recipe-name">steps go here </p>
+  </div>
+</div>
+  <%= button_to 'Add Ingredients', recipes_path(@recipe), method: :get %>
+  <%= button_to 'See all recipe', recipes_path(@recipe), method: :get %>
+
+</section>

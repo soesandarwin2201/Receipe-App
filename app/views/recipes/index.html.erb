@@ -1,11 +1,12 @@
 <section>
 <h1>List of recipes</h1>
 <ul class="recipe-section">
-  <% @recipe.each do |recipe| %>
+  <% @recipes.each do |recipe| %>
     <li>
       <h2><%=recipe.name %></h2>
       <p><%= recipe.preparation_time %></p>
       <p><%= recipe.cooking_time %></p>
+      <%= link_to 'Open details', recipe_path(recipe.id) %>
       <% if can? :destroy, recipe %>
         <%= button_to "Delete Recipe",  recipe_path(recipe), method: :delete, class: 'btn' %>
       <% end %>
