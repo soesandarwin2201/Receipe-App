@@ -18,8 +18,31 @@
 <%= link_to 'Add ingredient', new_recipe_food_recipe_path(@recipe.id)%>
 </button>
 
-<% if current_user.id == @recipe.user_id %>
-  <%= link_to 'Delete Recipe', recipe_path(@recipe), method: :delete, data: { confirm: 'Are you sure?' } %>
+<table>
+<thead>
+<tr>
+<th>Food</th>
+<th>Quantity</th>
+<th>Value</th>
+<th>Actions</th>
+</tr>
+</thead>
+<tbody>
+
+<% @recipe.recipe_food.each do |recipe_food| %>
+<tr>
+<td><%= recipe_food.food.name %></td>
+<td><%= recipe_food.food.quantity %> g</td>
+<td><%= recipe_food.food.quantity * recipe_food.food.price %></td>
+<td>
+<% if can? :destroy, @recipe %>
+<%= link_to 'modify', edit_recipe_food_recipe_path(@recipe.id, recipe_food.id) %>
+<%= button_to 'delete', recipe_food_recipe_path(@recipe.id, recipe_food.id), method: :delete %>
 <% end %>
+</td>
+</tr>
+<% end %>
+</tbody>
+</table>
 
 </section>

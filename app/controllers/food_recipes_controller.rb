@@ -35,10 +35,30 @@ class FoodRecipesController < ApplicationController
   end
 end
 
+   def update 
+  @food_recipe = RecipeFood.find(params[:id])
+  @food_recipe.update(modify_recipe_foods_param) # Pass the nested parameter here
+  flash[:notice] = "you have updated the recipe food"
+  redirect_to recipe_path(params[:recipe_id])
+end
+
+
+   def destroy 
+    @food_recipe  = RecipeFood.find(params[:id])
+    @recipe = @food_recipe.recipe
+    @food_recipe.destroy!
+    flash[:notice] = 'you have deleted the recipe food'
+    redirect_to recipe_food_recipe_path(@recipe)
+   end
+
   private 
 
-def strong_params
-  params.require(:food_recipe).permit(:quantity, :food_id)
+  def modify_recipe_foods_param
+    params.require(:edit_food_recipe).permit(:quantity, :food_id)
+  end
+ 
+   def strong_params   
+params.require(:food_recipe).permit(:quantity, :food_id)
 end
 end
 
