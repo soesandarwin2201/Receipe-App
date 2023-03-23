@@ -1,0 +1,13 @@
+<section class='recipe-show'>
+<h1><%= @recipe.name %></h1>
+
+<p><strong>Preparation Time:</strong> <%= @recipe.preparation_time %> minutes</p>
+<p><strong>Cooking Time:</strong> <%= @recipe.cooking_time %> minutes</p>
+
+<p><%= @recipe.description %></p>
+
+<% if current_user.id == @recipe.user_id %>
+  <%= link_to 'Delete Recipe', recipe_path(@recipe), method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
+
+</section>
