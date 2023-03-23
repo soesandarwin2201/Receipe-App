@@ -42,16 +42,15 @@ end
   end
 
   def update
-    @recipe = Recipe.find(params[:id])
-    if @recipe.public
-      @recipe.update(public: false)
-      flash[:notice] = "you updated the recipe status to private"
-    else
-      @recipe.update(public: true)
-      flash[:notice] = 'you updated the recipe status to public'
-    end
-    redirect_to recipes_path
+  @recipe = Recipe.find(params[:id])
+  if @recipe.update(public: !@recipe.public)
+    flash[:notice] = "you updated the recipe status to #{'private' unless @recipe.public}"
+  else
+    flash[:error] = 'Error updating recipe status'
   end
+  redirect_to recipes_path
+end
+
 
   private
 

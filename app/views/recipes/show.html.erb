@@ -3,7 +3,13 @@
 
 <p><strong>Preparation Time:</strong> <%= @recipe.preparation_time %> minutes</p>
 <p><strong>Cooking Time:</strong> <%= @recipe.cooking_time %> minutes</p>
-
+<%= button_to recipe_path(@recipe.id), method: :patch do %>
+  <% if @recipe.public %>
+    <i class="fa-light fa-toggle-on btn-on"></i>
+  <% else %>
+    <i class="fa-light fa-toggle-off btn-off"></i>
+  <% end %>
+<% end %>
 <p><%= @recipe.description %></p>
 
 <% if current_user.id == @recipe.user_id %>
