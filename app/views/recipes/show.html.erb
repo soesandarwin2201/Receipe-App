@@ -12,6 +12,12 @@
 <% end %>
 <p><%= @recipe.description %></p>
 
+<p>Steps goes here.....</p>
+
+<button>
+<%= link_to 'Add ingredient', new_recipe_food_recipe_path(@recipe.id)%>
+</button>
+
 <% if current_user.id == @recipe.user_id %>
   <%= link_to 'Delete Recipe', recipe_path(@recipe), method: :delete, data: { confirm: 'Are you sure?' } %>
 <% end %>
