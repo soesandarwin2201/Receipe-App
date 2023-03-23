@@ -1,0 +1,19 @@
+<h1>Add ingredient to Recipe</h1>
+<%= form_with url: recipe_food_recipes_path(recipe_id: @recipe.id), scope: :food_recipe do |form| %>
+    <div class="form-div" >
+    <div>
+    <%= form.label :quantity, class:"form-label" %><br>
+    <%= form.number_field :quantity ,  class:"form-control" , required: true, placeholder: '1',  min: 1%><br>
+  </div>
+
+  <div>
+    <%= form.label :food, class:"form-label" %><br>
+    <%= form.select :food_id, current_user.foods.map {|food| [food.name, food.id]},{ include_blank: true} , class:"form-select" %><br>
+    </div>
+
+  <div >
+    <div class="mb-3 col-sm-1">
+    <%= form.submit "Add", class:"btn btn-primary form-control" %>
+    </div>
+    </div>
+  <%end%>
