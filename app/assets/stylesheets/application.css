@@ -193,3 +193,13 @@ td {
   border: 0;
   box-shadow: 0 0 10px #888;
 }
+
+.btn-on {
+  background-color: #34be76;
+  color: #fff;
+}
+
+.btn-off {
+  background-color: red;
+  color: #fff;
+}
