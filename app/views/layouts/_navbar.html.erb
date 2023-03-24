@@ -1,8 +1,12 @@
 <nav class='navbar-container'>
 <ul class='nav-menu'>
 <% if user_signed_in? %>
-<%= link_to 'Edit', edit_user_registration_path  %>
-<%= link_to 'Sign out', destroy_user_session_path, 'data-turbo-method': :delete %>
+    <%= link_to 'Home', root_path %>
+    <%= link_to 'Foods', foods_path %>
+    <%= link_to 'Recipes', recipes_path %>
+    <%= link_to 'Public_Recipes', public_recipes_index_path %>
+    <%= link_to 'Edit', edit_user_registration_path  %>
+    <%= link_to 'Sign out', destroy_user_session_path, 'data-turbo-method': :delete %>
 
 <% elsif %>
       <%= link_to 'Sign In', new_user_session_path %>
