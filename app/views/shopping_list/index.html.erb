@@ -1,0 +1,12 @@
+<h1>Shopping List</h1>
+<% if @shopping_list.empty? %>
+  <p>No items to purchase.</p>
+<% else %>
+  <ul>
+    <% @shopping_list.each do |food_name, food_info| %>
+      <li><%= food_name %>: <%= food_info[:quantity] %> (<%= number_to_currency(food_info[:price]) %> each)</li>
+    <% end %>
+  </ul>
+  <p>Total items: <%= @total_items %></p>
+  <p>Total cost: <%= number_to_currency(@total_price) %></p>
+<% end %>
