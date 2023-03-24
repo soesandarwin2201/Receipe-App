@@ -11,9 +11,14 @@
 <p><strong>Cooking Time:</strong> <%= @recipe.cooking_time %> minutes</p>
 <p><%= @recipe.description %></p>
 <p>Steps goes here.....</p>
+<div class='btn-container' >
+<button class='btn'>
+<%= link_to 'Generate shopping list', shopping_list_index_path %>
+</button>
 <button class='btn'>
 <%= link_to 'Add ingredient', new_recipe_food_recipe_path(@recipe.id)%>
 </button>
+</div>
 
 <table class='food-table show'>
 <thead>
