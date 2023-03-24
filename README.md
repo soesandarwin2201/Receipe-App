@@ -81,8 +81,9 @@ Example command:
 
 ```sh
   cd Receipe-App
-  sudo gem install ruby
-  sudo gem install rails
+  bundle install
+  rails db:create
+  rails db:migrate
 ```
 
 ### Usage
@@ -98,10 +99,7 @@ To run the project, execute the following command:
 To run tests, run the following command:
 
 ```sh
-rspec ./spec/models/user_spec.rb
-rspec ./spec/models/food_spec.rb
-rspec ./spec/models/recipe_spec.rb
-rspec ./spec/models/food_recipe_spec.rb
+  rspec
 ```
 
 ### Deployment
