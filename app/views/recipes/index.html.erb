@@ -1,5 +1,6 @@
 <section>
 <h1>List of recipes</h1>
+<button class='btn'><%= link_to 'Add new form', new_recipe_path %></button>
 <ul class="recipe-section">
   <% @recipes.each do |recipe| %>
     <li>
@@ -13,5 +14,4 @@
     </li>
   <% end %>
 </ul>
-<%= link_to 'Add new form', new_recipe_path %>
 </section>

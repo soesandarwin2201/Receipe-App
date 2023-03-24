@@ -1,8 +1,5 @@
 <section class='recipe-show'>
 <h1><%= @recipe.name %></h1>
-
-<p><strong>Preparation Time:</strong> <%= @recipe.preparation_time %> minutes</p>
-<p><strong>Cooking Time:</strong> <%= @recipe.cooking_time %> minutes</p>
 <%= button_to recipe_path(@recipe.id), method: :patch do %>
   <% if @recipe.public %>
     <i class="fa-light fa-toggle-on btn-on"></i>
@@ -10,15 +7,15 @@
     <i class="fa-light fa-toggle-off btn-off"></i>
   <% end %>
 <% end %>
+<p><strong>Preparation Time:</strong> <%= @recipe.preparation_time %> minutes</p>
+<p><strong>Cooking Time:</strong> <%= @recipe.cooking_time %> minutes</p>
 <p><%= @recipe.description %></p>
-
 <p>Steps goes here.....</p>
-
-<button>
+<button class='btn'>
 <%= link_to 'Add ingredient', new_recipe_food_recipe_path(@recipe.id)%>
 </button>
 
-<table>
+<table class='food-table show'>
 <thead>
 <tr>
 <th>Food</th>
