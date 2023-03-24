@@ -11,6 +11,8 @@ body {
   color: #000;
   font-size: 1rem;
   letter-spacing: 3px;
+  width: 80%;
+  margin: auto;
 }
 
 ul {
@@ -35,7 +37,9 @@ li {
   background-color: #fff;
   width: 500px;
   border-radius: 10px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0 2px 5px -1px, rgba(0, 0, 0, 0.3) 0 1px 3px -1px;
+  box-shadow:
+    rgba(50, 50, 93, 0.25) 0 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0 1px 3px -1px;
 }
 
 img {
@@ -140,7 +144,6 @@ nav {
 .signin-container {
   display: flex;
   justify-content: center;
-  width: 100%;
   height: auto;
   flex-direction: column;
   align-items: center;
@@ -153,6 +156,10 @@ nav {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin: 20px;
+  padding-top: 20px;
+  position: relative;
+  left: 10%;
   gap: 0.5rem;
 }
 
@@ -224,4 +231,9 @@ section {
 .total {
   font-size: 1rem;
   color: orange;
+}
+
+.shopping-text {
+  display: flex;
+  justify-content: space-between;
 }
