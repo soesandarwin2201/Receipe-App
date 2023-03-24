@@ -237,3 +237,8 @@ section {
   display: flex;
   justify-content: space-between;
 }
+
+.btn-container {
+  display: flex;
+  gap: 1rem;
+}
