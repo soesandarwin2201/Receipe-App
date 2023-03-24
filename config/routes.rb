@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'user#index'
   get 'public_recipes/index'
   resources :foods, only: [:index, :new, :create, :destroy]
+  resources :shopping_lists, only: [:index, :show]
 
   # Defines the root path route ("/")
   # get "food#index"
