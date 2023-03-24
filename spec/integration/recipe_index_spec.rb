@@ -5,7 +5,7 @@ RSpec.describe 'Recipe Index', type: :system do
     @user = User.create(name: 'anye3', email: 'wolo22001@gmail.com', password: '2e2010510',
                         password_confirmation: '2e2010510')
     @recipe = Recipe.create(user_id: @user.id, name: 'pizza', preparation_time: '2hours', cooking_time: '3hours',
-                            description: 'good', public: true)
+                            description: 'good')
   end
 
   it 'User should log in' do
