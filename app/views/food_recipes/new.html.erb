@@ -11,7 +11,6 @@
     <%= form.label :food, class: 'form-label' %><br>
     <%= form.select :food_id, current_user.foods.map {|food| [food.name, food.id]},{ include_blank: true} , class:"input-form"%><br>
     </div>
-
   <div class='form-item'>
     <div>
     <%= form.submit "Add", class:"btn btn-primary form-control" %>
