@@ -1,5 +1,5 @@
-class ShoppingListsController < ApplicationController
-    def index 
+class ShoppingListController < ApplicationController
+  def index 
       # to show the recipe of the current user 
       @recipes = Recipe.where(user_id: current_user.id)
       # get the foodlist of the recipe 
@@ -7,4 +7,4 @@ class ShoppingListsController < ApplicationController
       # general food 
       @foods = Food.where(id: @recipe_foods.pluck(:food_id))
     end
-  end
+end
