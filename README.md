@@ -2,7 +2,7 @@
 
 # 📗 Table of Contents
 
-- [� Table of Contents](#-table-of-contents)
+- [📗 Table of Contents](#-table-of-contents)
 - [📖 Receipe App ](#-receipe-app-)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
@@ -69,7 +69,7 @@ In order to run this project you need:
 Clone this repository to your desired folder:
 
 ```sh
-  cd my-folder
+  cd Receipe-App
   https://github.com/soesandarwin2201/Receipe-App.git
 ```
 
@@ -80,7 +80,7 @@ Install this project with:
 Example command:
 
 ```sh
-  cd my-project
+  cd Receipe-App
   sudo gem install ruby
   sudo gem install rails
 ```
@@ -98,6 +98,10 @@ To run the project, execute the following command:
 To run tests, run the following command:
 
 ```sh
+rspec ./spec/models/user_spec.rb
+rspec ./spec/models/food_spec.rb
+rspec ./spec/models/recipe_spec.rb
+rspec ./spec/models/food_recipe_spec.rb
 ```
 
 ### Deployment
