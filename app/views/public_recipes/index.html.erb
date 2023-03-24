@@ -3,7 +3,7 @@
 <% if @public_recipes.exists? %>
 <% @public_recipes.each do |recipe| %>
 <li>
-<h1><%= recipe.name%></h1>
+<h1><%= link_to recipe.name, recipe_path(recipe) %></h1>
 <p>by: <%= recipe.user.name %> </p>
 <p>Total food items: <%= recipe.recipe_food.count %></p>
 <% recipe.recipe_food.each  do |recipefoods| %>
