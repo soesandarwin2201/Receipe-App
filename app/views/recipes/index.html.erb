@@ -1,0 +1,17 @@
+<section>
+<h1>List of recipes</h1>
+<button class='btn'><%= link_to 'Add new form', new_recipe_path %></button>
+<ul class="recipe-section">
+  <% @recipes.each do |recipe| %>
+    <li>
+      <h2><%= link_to recipe.name, {:action => 'show', :id => recipe.id } %></h2>
+      <p><%= recipe.preparation_time %></p>
+      <p><%= recipe.cooking_time %></p>
+      <% if can? :destroy, recipe %>
+        <%= button_to "Delete Recipe",  recipe_path(recipe), method: :delete, class: 'btn' %>
+      <% end %>
+      <p><%= recipe.description %></p>
+    </li>
+  <% end %>
+</ul>
+</section>

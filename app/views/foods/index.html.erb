@@ -1,0 +1,36 @@
+<section>
+<% if @food.blank? %>
+<p>There are no foods items</p>
+<% else %>
+<table class='food-table'>
+<thead>
+    <tr>
+      <th class="col">Food</th>
+      <th class="col">Quantity</th>
+      <th class="col">Measurement-Unit</th>
+      <th class="col">Unit-Price</th>
+      <th class="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @food.each do |food| %>
+  <tr>
+  <td><%= food.name %></td>
+  <td><%= food.quantity %></td>
+  <td><%= food.measurement_unit %> garams</td>
+  <td>$<%= food.price %></td>
+  <td><% if can? :destroy, food %>
+  <%= button_to "Delete", food_path(food), method: :delete, class: "btn" %>
+<% end %>
+
+  </td>
+  </tr>
+  <% end %>
+  <tbody>
+</table>
+<% end %>
+<button class='btn'>
+<%= link_to 'Post form', new_food_path %>
+</button>
+
+</section>

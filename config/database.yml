@@ -2,9 +2,10 @@ development:
   adapter: postgresql
   encoding: unicode
   database: Receipe_App_development
+  host: localhost
   pool: 5
   username: postgres
-  password: koko23052020
+  password: wolo
 
 test:
   adapter: postgresql
@@ -12,7 +13,7 @@ test:
   database: Receipe_App_test
   pool: 5
   username: postgres
-  password: koko23052020
+  password: wolo
 
 production:
   adapter: postgresql
@@ -20,4 +21,4 @@ production:
   database: Receipe_App_production
   pool: 5
   username: postgres
-  password: koko23052020
+  password: wolo

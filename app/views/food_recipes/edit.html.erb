@@ -1,0 +1,23 @@
+<section class='food-form-container'>
+<h1>Eidt ingredient to Recipe</h1>
+<%= form_with url: recipe_food_recipe_path(@recipe.id, @food_recipe.id), scope: :edit_food_recipe, method: :patch do |form| %>
+
+    <div class="form-div" >
+    <div>
+    <%= form.label :quantity, class:"form-label" %><br>
+    <%= form.number_field :quantity ,  class:"form-control" , required: true, placeholder: '1',  min: 1%><br>
+  </div>
+
+  <div>
+    <%= form.label :food, class:"form-label" %><br>
+    <%= form.select :food_id, current_user.foods.map {|food| [food.name, food.id]},{ include_blank: true} , class:"form-select" %><br>
+    </div>
+
+  <div >
+    <div class="mb-3 col-sm-1">
+    <%= form.submit "Add", class:"btn btn-primary form-control" %>
+    </div>
+    </div>
+  <%end%>
+  <%=link_to 'Back', recipe_path(@recipe.id), class:"btn"%>
+</section>

@@ -1,0 +1,50 @@
+<section class='recipe-show'>
+<h1><%= @recipe.name %></h1>
+<%= button_to recipe_path(@recipe.id), method: :patch do %>
+  <% if @recipe.public %>
+    <i class="fa-light fa-toggle-on btn-on"></i>
+  <% else %>
+    <i class="fa-light fa-toggle-off btn-off"></i>
+  <% end %>
+<% end %>
+<p><strong>Preparation Time:</strong> <%= @recipe.preparation_time %> minutes</p>
+<p><strong>Cooking Time:</strong> <%= @recipe.cooking_time %> minutes</p>
+<p><%= @recipe.description %></p>
+<p>Steps goes here.....</p>
+<div class='btn-container' >
+<button class='btn'>
+<%= link_to 'Generate shopping list', shopping_list_index_path %>
+</button>
+<button class='btn'>
+<%= link_to 'Add ingredient', new_recipe_food_recipe_path(@recipe.id)%>
+</button>
+</div>
+
+<table class='food-table show'>
+<thead>
+<tr>
+<th>Food</th>
+<th>Quantity</th>
+<th>Value</th>
+<th>Actions</th>
+</tr>
+</thead>
+<tbody>
+
+<% @recipe.recipe_food.each do |recipe_food| %>
+<tr>
+<td><%= recipe_food.food.name %></td>
+<td><%= recipe_food.food.quantity %> g</td>
+<td><%= recipe_food.food.quantity * recipe_food.food.price %></td>
+<td>
+<% if can? :destroy, @recipe %>
+<%= link_to 'modify', edit_recipe_food_recipe_path(@recipe.id, recipe_food.id) %>
+<%= button_to 'delete', recipe_food_recipe_path(@recipe.id, recipe_food.id), method: :delete %>
+<% end %>
+</td>
+</tr>
+<% end %>
+</tbody>
+</table>
+
+</section>
